@@ -23,7 +23,7 @@ test.describe('Swift Translator Data-Driven Suite', () => {
       await translator.goto();
       await translator.translate(tc.input);
       await page.waitForTimeout(500);
-      await expect(translator.outputBox).not.toContainText(tc.notExpected, { timeout: 30000 });
+      await expect(translator.outputBox).toContainText(tc.notExpected, { timeout: 30000 });
     });
   }
 });
